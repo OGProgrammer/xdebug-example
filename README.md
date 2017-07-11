@@ -73,6 +73,7 @@ __Just watch out for the reverse proxy trap.__ In cases like docker, vagrant, re
 
 ### Docker Xdebug Example
 
+This is probably a good example to look at how to get docker setup to get the xdebug connection
 Clone my other repository for an xdebug example using docker:
 
 `git clone git@github.com:OGProgrammer/docker-xdebug.git`
@@ -86,6 +87,27 @@ Clone my other repository for an xdebug example using PuPHPet:
 `git clone git@github.com:OGProgrammer/vagrant-xdebug.git`
 
 Read the README.md file within that repository for more information.
+
+### Profiling
+
+For MacOSX I'm using `brew install qcachegrind --with-graphviz` but kcachegrind is good among others.
+
+You'll need to set the following xdebug configs to enable profiling:
+
+```
+xdebug.profiler_enable = 1
+xdebug.profiler_output_dir = /tmp
+
+; Turn this off for more accurate profiling - https://xdebug.org/docs/all_settings#extended_info
+; "PHP's generated oparrays will increase with about a third of the size slowing down your scripts"
+xdebug.extended_info = 0
+```
+
+Set `profiler_output_dir` to a location you can later retrieve the cachegrind.out files.
+
+Don't forget to turn this back off as these files can get quite large with complex applications.
+
+An example can be found in the docker example on playing around with the profiler.
 
 ### About & other info
 

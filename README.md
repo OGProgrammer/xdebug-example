@@ -30,14 +30,14 @@ _Ex. Set PHPStorm telephone icon all green to start listening_
 * Default Xdebug settings are normally good enough to just call script with `php` command...
 
 ```
-php www/index.php
+php www/example/web/watchers.php
 ```
 
 * If you need to change xdebug settings, you can do that inline with option -d in `php`
 
 ```
 php -dxdebug.remote_enable=1 -dxdebug.remote_mode=req -dxdebug.remote_port=9000 \
-    -dxdebug.remote_host=127.0.0.1 -dxdebug.remote_connect_back=0 www/index.php
+    -dxdebug.remote_host=127.0.0.1 -dxdebug.remote_connect_back=0 www/example/watchers.php
 ```
 
 ### Debugging with the PHP Built In Web Server
@@ -49,7 +49,7 @@ php -dxdebug.remote_enable=1 -dxdebug.remote_mode=req -dxdebug.remote_port=9000 
 
 nohup php -dxdebug.remote_enable=1 -dxdebug.remote_mode=req -dxdebug.remote_port=9000 \
     -dxdebug.remote_host=127.0.0.1 -dxdebug.remote_connect_back=0 \
-    -S 127.0.0.1:8000 -t ./www > /dev/null 2>&1 &
+    -S 127.0.0.1:8000 -t ./www/example/web > /dev/null 2>&1 &
     
 # Use `pkill php` in dev to kill this server later
 ```
@@ -71,6 +71,21 @@ Identify the host IP you want to debug from (your machines IP running the IDE).
 Either hard code that into the `xdebug.remote_host` option or turn on `xdebug.remote_connect_back` which will connect back to the requesting IP. 
 __Just watch out for the reverse proxy trap.__ In cases like docker, vagrant, reverse proxies, you don't want to use `xdebug.remote_connect_back` but rather set the IP in `xdebug.remote_host` to point back to the host.
 
+### Docker Xdebug Example
+
+Clone my other repository for an xdebug example using docker:
+
+`git clone git@github.com:OGProgrammer/docker-xdebug.git`
+
+Read the README.md file within that repository for more information.
+
+### Vagrant (PuPHPet) Xdebug Example
+
+Clone my other repository for an xdebug example using PuPHPet:
+
+`git clone git@github.com:OGProgrammer/vagrant-xdebug.git`
+
+Read the README.md file within that repository for more information.
 
 ### About & other info
 
@@ -90,4 +105,16 @@ Share your knowledge!
 Become a speaker, co-organizer, at your local user groups.
 Contribute to your favorite open source packages (even if its a README ;)
 
+If you enjoyed this code, please support me at one of the following:
+
+Thank you! ☺
+
+BTC Wallet
+1HNHoUz8ruQGko8vh85Jf4nXx8tpEaxUxr
+
+ETH Wallet
+0xb561e6a160c86cd5831c323b0f9ce319b56c6421
+
+Patreon
+https://www.patreon.com/ogprogrammer
 ```

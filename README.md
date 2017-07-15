@@ -6,9 +6,9 @@ This is a repo of xdebug examples when debugging in certain situations.
 * A loop example with watchers & conditional breakpoints
 * A vagrant example
 * A docker example
-* A remote example
+* How you might setup a remote (AWS/Cloud to localhost) debug scenario.
 
-# Installing Xdebug
+## Installing Xdebug
 
 You can checkout the [Offical Docs](https://xdebug.org/docs/install) for install xdebug. I've also included a script to install on OSX. PRs welcome for other systems.
 
@@ -44,6 +44,8 @@ php -dxdebug.remote_enable=1 -dxdebug.remote_mode=req -dxdebug.remote_port=9000 
 
 * Start the `php` built in web server with remote_enabled turned on.
 
+To run the PHP built in web server in the background:
+
 ```
 # This will launch the php web server in a way where it runs even after closing your terminal.
 
@@ -53,6 +55,13 @@ nohup php -dxdebug.remote_enable=1 -dxdebug.remote_mode=req -dxdebug.remote_port
     
 # Use `pkill php` in dev to kill this server later
 ```
+
+To run it in the foreground:
+
+```
+php -dxdebug.remote_enable=1 -S 127.0.0.1:8000 -t ./www/example/web
+```
+
 _Note: You can change php & xdebug settings inline when starting it like what directory gets served up with the -t option. [Read more about the Built in PHP Web Server Here](http://php.net/manual/en/features.commandline.webserver.php)_
 
 * Goto your web browser and navigate to "127.0.0.1:8000/index.php"
@@ -87,6 +96,10 @@ Clone my other repository for an xdebug example using PuPHPet:
 `git clone git@github.com:OGProgrammer/vagrant-xdebug.git`
 
 Read the README.md file within that repository for more information.
+
+### Debugging a Cloud Server
+
+You should be able to pick an arbitrary port like 9900 and setup xdebug with that port and your WAN IP address. Then on your router you can setup port forwarding to your local machine. In theory that should allow the cloud server to connect back to your IDE. If you can't access the internet from the cloud instance then you might want to use VIM/DBGp on the instance itself. If your a real magician you might even be able to setup an ssh tunnel but I've never tried that. Someone with experience doing this? I'd like to hear about remote debug experiences.
 
 ### Profiling
 

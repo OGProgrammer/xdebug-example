@@ -11,4 +11,5 @@ foreach ($greetingArray as $char) {
     $greeting .= $char;
 }
 
+// Change the greeting by right clicking on the var and click "set value..." to whatever you want
 echo $greeting;

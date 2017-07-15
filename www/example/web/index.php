@@ -19,4 +19,7 @@
     <li>
         <a href="dump.php">Dump Variables</a>
     </li>
+    <li>
+        <a href="javascript.php">Debug Javascript</a>
+    </li>
 </ul>

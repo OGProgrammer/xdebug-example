@@ -6,6 +6,9 @@
     <li>
         <a href="breakpoints.php">Conditional Breakpoints</a>
     </li>
+    <li>
+        <a href="stack_trace.php">Stack Trace (Fatal on purpose)</a>
+    </li>
 </ul>
 
 <h2>Other debug stuff to look at</h2>

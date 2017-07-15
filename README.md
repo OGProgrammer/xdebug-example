@@ -120,7 +120,7 @@ Set `profiler_output_dir` to a location you can later retrieve the cachegrind.ou
 
 Don't forget to turn this back off as these files can get quite large with complex applications.
 
-An example can be found in the docker example on playing around with the profiler.
+An example can be found in the docker example repository that plays around with the profiler.
 
 ### About & other info
 

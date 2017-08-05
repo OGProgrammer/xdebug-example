@@ -16,6 +16,10 @@ Available Install Scripts:
 
 * OSX via [Homebrew](https://brew.sh/)
   * /install/osx/brew-install-php71-xdebug.sh
+  
+### Make sure you have XDEBUG INSTALLED!
+
+Run `php -i | grep xdebug` and make sure you see xdebug ini settings... Don't make the same mistake as me and try to debug without xdebug even installed. FML.
 
 ## Examples
 
